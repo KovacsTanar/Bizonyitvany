@@ -12,7 +12,7 @@ namespace ConsoleApp15
         private int magyar, matek, angol, tori, info, igazolt, igazolatlan;
 
         private static string[] tantargyak = new string[] { "magyar", "matek", "angol", "tori", "info" };
-        Dictionary<string, int> tantargyJegy;
+        //Dictionary<string, int> tantargyJegy;
 
 
 
@@ -27,15 +27,15 @@ namespace ConsoleApp15
             this.info = info;
             this.igazolt = igazolt;
             this.igazolatlan = igazolatlan;
-            //Feltolt();
-            tantargyJegy = new Dictionary<string, int>()
-            {
-                {"Magyar", magyar},
-                {"Matek", matek},
-                {"Angol", angol},
-                {"Töri", tori},
-                {"Info", info},
-            };
+           
+            //tantargyJegy = new Dictionary<string, int>()
+            //{
+            //    {"Magyar", magyar},
+            //    {"Matek", matek},
+            //    {"Angol", angol},
+            //    {"Töri", tori},
+            //    {"Info", info},
+            //};
 
         }
 
@@ -45,23 +45,21 @@ namespace ConsoleApp15
         public void LegjobbOsztalyzat()
         {
             List<int> osztalyzatok = new List<int>()
-            {magyar, matek,angol,tori,info};
+            {
+                magyar, matek,angol,tori,info
+            };
             int legjobb = osztalyzatok.Max();
 
             for (int i = 0; i < osztalyzatok.Count; i++)
             {
-                if (osztalyzatok[i] == legjobb) Console.WriteLine(tantargyJegy.Keys.ElementAt(i));
+                if (osztalyzatok[i] == legjobb)
+                {
+                    //Console.WriteLine(tantargyJegy.Keys.ElementAt(i));
+                    Console.WriteLine(tantargyak[i]);
+                }
             }
         }
 
-        //private void Feltolt()
-        //{
-        //    tantargyJegy.Add("Magyar", magyar);
-        //    tantargyJegy.Add("Matek", matek);
-        //    tantargyJegy.Add("Angol", angol);
-        //    tantargyJegy.Add("Töri", tori);
-        //    tantargyJegy.Add("Info", info);
-        //}
         
     }
 }

@@ -12,6 +12,7 @@ namespace ConsoleApp15
         {
             Bizonyitvany bizonyitvany = new Bizonyitvany("Laci","12/A",5,4,3,2,5,12,0);
 
+            Console.WriteLine("Az átlag: {0:0.00}",bizonyitvany.Atlag());
             bizonyitvany.LegjobbOsztalyzat();
             Console.ReadKey();
 
