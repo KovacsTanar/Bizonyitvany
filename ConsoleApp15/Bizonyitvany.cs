@@ -39,9 +39,11 @@ namespace ConsoleApp15
 
         }
 
-        public double Atlag() {
+        public double Atlag()
+        {
             return (double)(magyar + matek + angol + tori + info) / 5;
         }
+
         public void LegjobbOsztalyzat()
         {
             List<int> osztalyzatok = new List<int>()
@@ -58,6 +60,32 @@ namespace ConsoleApp15
                     Console.WriteLine(tantargyak[i]);
                 }
             }
+        }
+
+        public void LegrosszabbOsztalyzat()
+        {
+            List<int> osztalyzatok = new List<int>()
+            {
+                magyar, matek, angol, tori, info
+            };
+
+            int legrosszabbJegy = osztalyzatok.Min();
+
+            for (int i = 0; i < osztalyzatok.Count; i++)
+            {
+                if (osztalyzatok[i] == legrosszabbJegy)
+                    Console.WriteLine(tantargyak[i]);
+            }
+        }
+
+        public void LevelKuldes()
+        {
+            if(igazolatlan >= 10)
+                Console.WriteLine("Figyelem! {0} igazolatlan hiányzásai ({1} óra) miatt a szülőnek levelet kell írni!",nev,igazolatlan);
+            else if(igazolt >=250)
+                Console.WriteLine("Figyelem! {0} igazol hiányzásai ({1}  óra) miatt a szülőnek levelet kell írni!",nev,igazolt);
+            else
+                Console.WriteLine("Nincs teendő a hiányzásokkal kapcsolatosan.");
         }
 
         
